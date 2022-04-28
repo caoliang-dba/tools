@@ -90,7 +90,7 @@ class Etract(object):
 
     def parse_args(self):
         parser = argparse.ArgumentParser(
-            usage='python3 extract_data.py -i <DB ip> -u <DB user> -p <DB password> -d <DB name> -f <sql filename> -P <DB port>',
+            usage='python3 mysql_to_csv.py -i <DB ip> -u <DB user> -p <DB password> -d <DB name> -f <sql filename> -P <DB port>',
             description='Dump data', )
         parser.add_argument('-i', '--ip', nargs='?', required=True, help='DB ip')
         parser.add_argument('-u', '--user', nargs='?', required=True, help='DB user')
