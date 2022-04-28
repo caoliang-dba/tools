@@ -22,7 +22,8 @@ class Etract(object):
             port=port,
             database=db,
             charset='utf8mb4',
-            cursorclass=pymysql.cursors.DictCursor
+            cursorclass=pymysql.cursors.DictCursor,
+            read_timeout=3600
         )
         cur = conn.cursor()  # 创建游标
 
@@ -54,6 +55,8 @@ class Etract(object):
                     # print(value)
                     i += 1
                     bar.next()
+        cur.close()
+        conn.close()
 
         if not os.path.exists(csv_file):  # 判断文件是否存在
             print("生成csv失败")
